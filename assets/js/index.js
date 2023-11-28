@@ -64,7 +64,7 @@ function CurrentForecastToday(event) {
 //Function to get latitude and longitude to be used in weather Api for 5 day forecast
 function GetLatitudeLongitude(city) {
   fetch(
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       city +
       "&limit=5&appid=" +
       apiKey
