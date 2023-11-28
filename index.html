@@ -8,10 +8,10 @@
   </head>
   <body class="flex-column min-100-vh">
     <header class="hero">
-      <h2>Weather Dashboard</h2>
+      <h1 class="text-uppercase" style="text-align: center;">Weather Dashboard</h1>
     </header>
     <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-3">
         <div class="card">
           <h3 class="card-header text-uppercase">Search for a City</h3>
           <form id="user-form" class="card-body">
@@ -22,29 +22,36 @@
               autofocus="true"
               class="form-input"
             />
-            <button type="submit" class="btn">Search</button>
+            <button type="submit" class="btn-search">Search</button>
           </form>
         </div>
+        <div class="card ">
+          <ul class="list-cities"></ul>
+        </div>
       </div>
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-9">
         <div class="card current-weather">
-          <h3 class="card-header text-uppercase city-name">City Name</h3>
-          <p class="current-temperature">Temp</p>
-          <p class="current-wind">Wind</p>
-          <p class="current-humidity">Humidity</p>
+          <h3 class="card-header text-uppercase current-city " >
+          </h3><img id="wicon" src="" />
+          <p class="current-temp">Temp : </p>
+          <p class="current-wind">Wind : </p>
+          <p class="current-humidity">Humidity : </p>
         </div>
         <div class="card">
-          <h3 class="card-header text-uppercase">5 Day Forecast</h3>
+          <h3 class="card-header">5 Day Forecast</h3>
         </div>
-
-        <div class="flex-row justify-space-between">
-         <div class="card col-8 col-md-2">Day 1</div>
-          <div class="card col-8 col-md-2">Day 2</div>
-          <div class="card col-8 col-md-2">Day 3</div>
-          <div class="card col-8 col-md-2">Day 4</div>
-          <div class="card col-8 col-md-2">Day 5</div>
+        <div class="flex-row justify-space-between forecast-container">
         </div>
      
     </main>
+        <!-- Link the DayJS library -->
+        <script
+        src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+        crossorigin="anonymous"
+      ></script>
+        
+
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
