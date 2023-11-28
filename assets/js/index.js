@@ -40,7 +40,7 @@ function CurrentForecastToday(event) {
       response.json().then(function (data) {
         weatherIcon.setAttribute(
           "src",
-          "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
+          "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"
         );
 
         displaycity.textContent +=
@@ -107,7 +107,7 @@ function displayForecastWeather(data) {
           var tempIcon = document.createElement("img");
           tempIcon.setAttribute(
             "src",
-            "http://openweathermap.org/img/w/" +
+            "https://openweathermap.org/img/w/" +
               weatherdata.list[i].weather[0].icon +
               ".png"
           );
