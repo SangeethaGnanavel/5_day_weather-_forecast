@@ -25,6 +25,8 @@ To develop weather dashboard that displays current and 5 days forecast for selec
 
 ## URL
 
+https://sangeethagnanavel.github.io/5_day_weather_forecast/
+
 # Author
 
 Sangeetha Gnanavel, a Full Stack Developer having enormous experience in Front-end and Back-end application development.
