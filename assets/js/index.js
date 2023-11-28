@@ -9,7 +9,6 @@ let forecastContainer = document.querySelector(".forecast-container");
 let listCitiesul = document.querySelector(".list-cities");
 let currentweathercontainer = document.querySelector(".current-weather");
 
-// weatherIcon = "http://openweathermap.org/img/w/";
 apiKey = "77ddd23344c52a9be8cb0d28ce8c4881"; //Name :San_Weather
 let latitude = "";
 let longitude = "";
@@ -19,6 +18,7 @@ currentTemp.setAttribute("style", "color:white");
 currentWind.setAttribute("style", "color:white");
 currentHumidity.setAttribute("style", "color:white");
 
+//Function to display current weather
 function CurrentForecastToday(event) {
   event.preventDefault();
 
@@ -30,7 +30,6 @@ function CurrentForecastToday(event) {
   currentTemp.textContent = "";
   currentWind.textContent = "";
   currentHumidity.textContent = "";
-  //   https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} // API format
 
   let apiToday =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -61,10 +60,9 @@ function CurrentForecastToday(event) {
 
   GetLatitudeLongitude(cityName.value);
 }
-function GetLatitudeLongitude(city) {
-  // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key} //Api URl format
-  //http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key} // Example API call
 
+//Function to get latitude and longitude to be used in weather Api for 5 day forecast
+function GetLatitudeLongitude(city) {
   fetch(
     "http://api.openweathermap.org/geo/1.0/direct?q=" +
       city +
@@ -79,8 +77,9 @@ function GetLatitudeLongitude(city) {
     }
   });
 }
+
+//Fucntion to display 5 day weather forecast for selected city
 function displayForecastWeather(data) {
-  // https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key} //API URL
   while (forecastContainer.firstChild) {
     forecastContainer.removeChild(forecastContainer.firstChild);
   }
@@ -143,6 +142,7 @@ function displayForecastWeather(data) {
 
   saveCitytoLocalstoarge(cityName.value);
 }
+//Function to store the city in local storage
 function saveCitytoLocalstoarge(city) {
   var citysearched = [];
   let uniquecitysearched = [];
@@ -159,6 +159,7 @@ function saveCitytoLocalstoarge(city) {
   localStorage.setItem("citysearched", JSON.stringify(uniquecitysearched));
 }
 
+//Function that displays cities from local storage on form load
 function searchHistory() {
   while (listCitiesul.firstChild) {
     listCitiesul.removeChild(listCitiesul.firstChild);
